@@ -24,5 +24,14 @@ namespace ItViteaVlaggen01
         {
             InitializeComponent();
         }
+        public void InitializeImageList()
+        {
+           //Flags flag1 = new Flags { Number = 1, Name = "Nepal", Image = image1.Source; }
+
+        }
+
+
+
+        
     }
 }
