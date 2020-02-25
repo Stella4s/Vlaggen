@@ -9,29 +9,26 @@ using System.Resources;
 
 namespace ItViteaVlaggen01
 {
-    class FlagDetails
+    public class FlagDetails
     {
+        private string _name, _imgSource;
         /// <summary>
         /// The name of the country that will be used. (based of FileName)
         /// </summary>
-        public string Name { get; set; }
+        public string Name
+        {
+            get => _name;
+            set => _name = value.Replace("Flag", "").Replace("_", " ");
+        }
         /// <summary>
         /// The actual filename. Flag[country].png
         /// </summary>
         public string FileName { get; set; }
 
-        public string ImgSource { get; set; }
-        /// <summary>
-        /// The image object.
-        /// </summary>
-        public object Img { get; set; }
-
-        public int ID { get; set; }
-
-        public void setNameAndImgSource()
+        public string ImgSource
         {
-            Name = FileName.Replace("Flag", "");
-            ImgSource = String.Format(@"Resources\{0}.png", FileName);
+            get => _imgSource;
+            set => _imgSource = String.Format(@"Resources\{0}.png", value);
         }
     }
 

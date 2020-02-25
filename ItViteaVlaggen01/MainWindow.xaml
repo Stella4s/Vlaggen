@@ -8,7 +8,7 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="600">
 
-    <Grid Margin="20,20,30,20">
+    <!--<Grid Margin="20,20,30,20">
         <Grid.RowDefinitions>
             <RowDefinition Height="4*"/>
             <RowDefinition/>
@@ -22,12 +22,44 @@
         <Image x:Name="image1" Grid.ColumnSpan="2" Margin="10" Source="Resources/FlagSwitzerland.png" />
         <TextBlock x:Name="textBlock1" Text="" Margin="0" Grid.Row="1" TextWrapping="Wrap" Grid.RowSpan="3" Grid.ColumnSpan="2"/>
 
-        <!--<StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
+        --><!--<StackPanel Orientation="Horizontal" Grid.ColumnSpan="2">
             <Image Source="{Binding Img}" />
             <Label Content="{Binding Name}"/>
-        </StackPanel>-->
+        </StackPanel>--><!--
 
-    </Grid>
+    </Grid>-->
+
+    <DockPanel LastChildFill="False">
+        <Grid VerticalAlignment="Top" DockPanel.Dock="Bottom">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Button x:Name="startButton" Content="Start Game" Margin="60,5" Click="StartButton_Click"/>
+            <Button x:Name="confirmButton" Content="Confirm" Margin="60,5" Grid.Column="1" Click="ConfirmButton_Click" IsEnabled="False"/>
+        </Grid>
+
+        <Grid x:Name="grid1" VerticalAlignment="Top" DockPanel.Dock="Bottom" MinHeight="150" Margin="10
+              ">
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <RadioButton x:Name="rButton1" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked"/>
+            <RadioButton x:Name="rButton2" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Column="1"/>
+            <RadioButton x:Name="rButton3" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="1"/>
+            <RadioButton x:Name="rButton4" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="1" Grid.Column="1"/>
+        </Grid>
+        <!--<Label x:Name="labelShow" Content="" DockPanel.Dock="Bottom" HorizontalAlignment="Center"/>-->
+        <Image x:Name="image1" DockPanel.Dock="Top" />
+
+
+
+    </DockPanel>
 
 </Window>
 
