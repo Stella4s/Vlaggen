@@ -113,9 +113,6 @@
     <Resource Include="Resources\FlagAngola.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagAntiguaAndBarbuda.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\FlagArgentina.png" />
   </ItemGroup>
   <ItemGroup>
@@ -194,9 +191,6 @@
     <Resource Include="Resources\FlagCape_Verde.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagCentralAfricanRepublic.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\FlagChad.png" />
   </ItemGroup>
   <ItemGroup>
@@ -233,9 +227,6 @@
     <Resource Include="Resources\FlagDominica.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagDominicanRepublic.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\FlagEast_Timor.png" />
   </ItemGroup>
   <ItemGroup>
@@ -267,9 +258,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagFinland.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagFrance..png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagGabon.png" />
@@ -443,9 +431,6 @@
     <Resource Include="Resources\FlagNepal.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagNetherlands.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\FlagNew_Zealand.png" />
   </ItemGroup>
   <ItemGroup>
@@ -486,9 +471,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagParaguay.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagPeru..png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagPoland.png" />
@@ -617,21 +599,6 @@
     <Resource Include="Resources\FlagThe_Vatican_City.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagTheComoros.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagTheDemocraticRepublicOfTheCongo.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagTheGambia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagThePhilippines.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagTheRepublicOfTheCongo.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\FlagTogo.png" />
   </ItemGroup>
   <ItemGroup>
@@ -681,6 +648,39 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagZimbabwe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagThe_Republic_Of_The_Congo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagFrance.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagAntigua_and_Barbuda.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagCentral_African_Republic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagDominican_Republic.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagPeru.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagThe_Philippines.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagThe_Netherlands.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagThe_Gambia.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagThe_Democratic_Republic_Of_The_Congo.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagThe_Comoros.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

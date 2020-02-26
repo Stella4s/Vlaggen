@@ -113,9 +113,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagAntiguaAndBarbuda {
+        internal static System.Drawing.Bitmap FlagAntigua_and_Barbuda {
             get {
-                object obj = ResourceManager.GetObject("FlagAntiguaAndBarbuda", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagAntigua_and_Barbuda", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -273,9 +273,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagBosniaAndHerzegovina {
+        internal static System.Drawing.Bitmap FlagBosnia_and_Herzegovina {
             get {
-                object obj = ResourceManager.GetObject("FlagBosniaAndHerzegovina", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagBosnia_and_Herzegovina", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -383,9 +383,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagCentralAfricanRepublic {
+        internal static System.Drawing.Bitmap FlagCentral_African_Republic {
             get {
-                object obj = ResourceManager.GetObject("FlagCentralAfricanRepublic", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagCentral_African_Republic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -433,9 +433,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagCosta_Rica_state_ {
+        internal static System.Drawing.Bitmap FlagCosta_Rica_state {
             get {
-                object obj = ResourceManager.GetObject("FlagCosta_Rica_state_", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagCosta_Rica_state", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -513,9 +513,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagDominicanRepublic {
+        internal static System.Drawing.Bitmap FlagDominican_Republic {
             get {
-                object obj = ResourceManager.GetObject("FlagDominicanRepublic", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagDominican_Republic", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -633,9 +633,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagFrance_ {
+        internal static System.Drawing.Bitmap FlagFrance {
             get {
-                object obj = ResourceManager.GetObject("FlagFrance_", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagFrance", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -733,9 +733,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagGuyana_ {
+        internal static System.Drawing.Bitmap FlagGuyana {
             get {
-                object obj = ResourceManager.GetObject("FlagGuyana_", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagGuyana", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1213,16 +1213,6 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagNetherlands {
-            get {
-                object obj = ResourceManager.GetObject("FlagNetherlands", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap FlagNew_Zealand {
             get {
                 object obj = ResourceManager.GetObject("FlagNew_Zealand", resourceCulture);
@@ -1363,9 +1353,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagPeru_ {
+        internal static System.Drawing.Bitmap FlagPeru {
             get {
-                object obj = ResourceManager.GetObject("FlagPeru_", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagPeru", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1713,9 +1703,29 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FlagThe_Comoros {
+            get {
+                object obj = ResourceManager.GetObject("FlagThe_Comoros", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FlagThe_Czech_Republic {
             get {
                 object obj = ResourceManager.GetObject("FlagThe_Czech_Republic", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FlagThe_Democratic_Republic_of_the_Congo {
+            get {
+                object obj = ResourceManager.GetObject("FlagThe_Democratic_Republic_of_the_Congo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1733,9 +1743,49 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap FlagThe_Gambia {
+            get {
+                object obj = ResourceManager.GetObject("FlagThe_Gambia", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap FlagThe_Marshall_Islands {
             get {
                 object obj = ResourceManager.GetObject("FlagThe_Marshall_Islands", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FlagThe_Netherlands {
+            get {
+                object obj = ResourceManager.GetObject("FlagThe_Netherlands", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FlagThe_Philippines {
+            get {
+                object obj = ResourceManager.GetObject("FlagThe_Philippines", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap FlagThe_Republic_of_the_Congo {
+            get {
+                object obj = ResourceManager.GetObject("FlagThe_Republic_of_the_Congo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -1786,56 +1836,6 @@ namespace ItViteaVlaggen01.Properties {
         internal static System.Drawing.Bitmap FlagThe_Vatican_City {
             get {
                 object obj = ResourceManager.GetObject("FlagThe_Vatican_City", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FlagTheComoros {
-            get {
-                object obj = ResourceManager.GetObject("FlagTheComoros", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FlagTheDemocraticRepublicOfTheCongo {
-            get {
-                object obj = ResourceManager.GetObject("FlagTheDemocraticRepublicOfTheCongo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FlagTheGambia {
-            get {
-                object obj = ResourceManager.GetObject("FlagTheGambia", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FlagThePhilippines {
-            get {
-                object obj = ResourceManager.GetObject("FlagThePhilippines", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
-        internal static System.Drawing.Bitmap FlagTheRepublicOfTheCongo {
-            get {
-                object obj = ResourceManager.GetObject("FlagTheRepublicOfTheCongo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
