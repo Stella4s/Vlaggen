@@ -1723,16 +1723,6 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagThe_Democratic_Republic_of_the_Congo {
-            get {
-                object obj = ResourceManager.GetObject("FlagThe_Democratic_Republic_of_the_Congo", resourceCulture);
-                return ((System.Drawing.Bitmap)(obj));
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized resource of type System.Drawing.Bitmap.
-        /// </summary>
         internal static System.Drawing.Bitmap FlagThe_Federated_States_of_Micronesia {
             get {
                 object obj = ResourceManager.GetObject("FlagThe_Federated_States_of_Micronesia", resourceCulture);
@@ -1783,9 +1773,9 @@ namespace ItViteaVlaggen01.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
-        internal static System.Drawing.Bitmap FlagThe_Republic_of_the_Congo {
+        internal static System.Drawing.Bitmap FlagThe_Republic_Of_The_Congo {
             get {
-                object obj = ResourceManager.GetObject("FlagThe_Republic_of_the_Congo", resourceCulture);
+                object obj = ResourceManager.GetObject("FlagThe_Republic_Of_The_Congo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -134,7 +134,7 @@
     <value>..\Resources\FlagAngola.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagAntigua_and_Barbuda" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagAntiguaAndBarbuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagAntigua_and_Barbuda.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagArgentina" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagArgentina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -182,7 +182,7 @@
     <value>..\Resources\FlagBolivia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagBosnia_and_Herzegovina" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagBosniaAndHerzegovina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagBosnia_and_Herzegovina.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagBotswana" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagBotswana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -215,7 +215,7 @@
     <value>..\Resources\FlagCape_Verde.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagCentral_African_Republic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagCentralAfricanRepublic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagCentral_African_Republic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagChad" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagChad.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -230,7 +230,7 @@
     <value>..\Resources\FlagColombia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagCosta_Rica" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagCosta_Rica(state).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagCosta_Rica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagCroatia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagCroatia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -254,7 +254,7 @@
     <value>..\Resources\FlagDominica.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagDominican_Republic" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagDominicanRepublic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagDominican_Republic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagEast_Timor" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagEast_Timor.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -611,31 +611,28 @@
     <value>..\Resources\FlagThailand.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Comoros" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagTheComoros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagThe_Comoros.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Czech_Republic" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagThe_Czech_Republic.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="FlagThe_Democratic_Republic_of_the_Congo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagTheDemocraticRepublicOfTheCongo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Federated_States_of_Micronesia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagThe_Federated_States_of_Micronesia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Gambia" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagTheGambia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagThe_Gambia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Marshall_Islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagThe_Marshall_Islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Netherlands" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagNetherlands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagThe_Netherlands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Philippines" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagThePhilippines.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagThe_Philippines.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FlagThe_Republic_of_the_Congo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagTheRepublicOfTheCongo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="FlagThe_Republic_Of_The_Congo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\FlagThe_Republic_Of_The_Congo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagThe_Solomon_Islands" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagThe_Solomon_Islands.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

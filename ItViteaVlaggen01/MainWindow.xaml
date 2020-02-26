@@ -55,10 +55,10 @@
                 <ColumnDefinition/>
             </Grid.ColumnDefinitions>
             <Label x:Name="labelDisplay" Content="" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
-            <RadioButton x:Name="rButton1" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Margin="134,9.25,133,22" Grid.Row="1"/>
-            <RadioButton x:Name="rButton2" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Column="1" Margin="133,9.25,134,22" Grid.Row="1"/>
-            <RadioButton x:Name="rButton3" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="2" Margin="134,22,133,22"/>
-            <RadioButton x:Name="rButton4" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="2" Grid.Column="1" Margin="133,22,134,22"/>
+            <RadioButton x:Name="rButton1" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="1"/>
+            <RadioButton x:Name="rButton2" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Column="1" Grid.Row="1"/>
+            <RadioButton x:Name="rButton3" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="2"/>
+            <RadioButton x:Name="rButton4" Content="" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="2" Grid.Column="1"/>
         </Grid>
         <!--<Label x:Name="labelShow" Content="" DockPanel.Dock="Bottom" HorizontalAlignment="Center"/>-->
         <Image x:Name="image1" DockPanel.Dock="Top"/>
