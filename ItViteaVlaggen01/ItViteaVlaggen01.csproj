@@ -86,8 +86,8 @@
     </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
-      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
       <SubType>Designer</SubType>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -158,9 +158,6 @@
     <Resource Include="Resources\FlagBolivia.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagBosniaAndHerzegovina.png" />
-  </ItemGroup>
-  <ItemGroup>
     <Resource Include="Resources\FlagBotswana.png" />
   </ItemGroup>
   <ItemGroup>
@@ -201,9 +198,6 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagColombia.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="Resources\FlagCosta_Rica%28state%29.png" />
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagCôte_d%27Ivoire.png" />
@@ -287,9 +281,7 @@
     <Resource Include="Resources\FlagGuinea-Bissau.png" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resources\FlagGuyana..png" />
-  </ItemGroup>
-  <ItemGroup>
+    <Resource Include="Resources\FlagGuyana.png" />
     <Resource Include="Resources\FlagHaiti.png" />
   </ItemGroup>
   <ItemGroup>
@@ -681,6 +673,12 @@
   </ItemGroup>
   <ItemGroup>
     <Resource Include="Resources\FlagThe_Comoros.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagBosnia_and_Herzegovina.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resources\FlagCosta_Rica.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

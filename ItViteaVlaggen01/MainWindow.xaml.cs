@@ -47,7 +47,7 @@ namespace ItViteaVlaggen01
                     .GetProperties(BindingFlags.Static | BindingFlags.NonPublic |
                                                          BindingFlags.Public)
                     .Where(p => p.PropertyType == typeof(Bitmap))
-                    .Select(x => new { Name = x.Name, Image = x.GetValue(null, null) })
+                    .Select(x => new { x.Name, Image = x.GetValue(null, null) })
                     .ToList();
 
             int intID = 0;
@@ -57,7 +57,7 @@ namespace ItViteaVlaggen01
                 intID++;
             }
         }
-        private BitmapImage returnImage(string imgSource)
+        private BitmapImage ReturnImage(string imgSource)
         {
             BitmapImage image = new BitmapImage();
             image.BeginInit();
@@ -65,12 +65,12 @@ namespace ItViteaVlaggen01
             image.EndInit();
             return image;
         }
-        private void displayAllImages()
+        private void DisplayAllImages()
         {
             imgTestButton.IsEnabled = false;
-            int i = 0;
+            int i = 30;
             DispatcherTimer timer = new DispatcherTimer();
-            timer.Interval = TimeSpan.FromMilliseconds(500);
+            timer.Interval = TimeSpan.FromMilliseconds(300);
             timer.Tick += timer_Tick;
             timer.Start();
 
@@ -84,7 +84,7 @@ namespace ItViteaVlaggen01
                 }
                 else
                 {
-                    image1.Source = returnImage(FlagDict[i].ImgSource);
+                    image1.Source = ReturnImage(FlagDict[i].ImgSource);
                     labelDisplay.Content = FlagDict[i].Name;
                     i++;
                 }
@@ -102,7 +102,7 @@ namespace ItViteaVlaggen01
             int randomKey = random.Next(keyList.Count);
             var currentFlag = FlagDict[keyList[randomKey]];
 
-            image1.Source = returnImage(currentFlag.ImgSource);
+            image1.Source = ReturnImage(currentFlag.ImgSource);
             keyList.RemoveAt(randomKey);
             switch (random.Next(1, 5))
             {
@@ -190,7 +190,7 @@ namespace ItViteaVlaggen01
 
         private void ImgTest_Click(object sender, RoutedEventArgs e)
         {
-            displayAllImages();
+            DisplayAllImages();
         }
     }
 }

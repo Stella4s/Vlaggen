@@ -61,7 +61,7 @@
             <RadioButton x:Name="rButton4" Content="?" HorizontalAlignment="Center" VerticalAlignment="Center" Checked="Radiobutton_Checked" Grid.Row="2" Grid.Column="1" Margin="133,22,134,22"/>
         </Grid>
         <!--<Label x:Name="labelShow" Content="" DockPanel.Dock="Bottom" HorizontalAlignment="Center"/>-->
-        <Image x:Name="image1" DockPanel.Dock="Top" Source="Resources/FlagAngola.png" />
+        <Image x:Name="image1" DockPanel.Dock="Top"/>
 
 
     </DockPanel>

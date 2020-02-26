@@ -229,7 +229,7 @@
   <data name="FlagColombia" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagColombia.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FlagCosta_Rica_state" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FlagCosta_Rica" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagCosta_Rica(state).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagCroatia" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -241,7 +241,7 @@
   <data name="FlagCyprus" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagCyprus.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FlagCôte_d_Ivoire" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FlagCôte_d1Ivoire" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagCôte_d'Ivoire.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagDenmark" type="System.Resources.ResXFileRef, System.Windows.Forms">
@@ -290,7 +290,7 @@
     <value>..\Resources\FlagFinland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagFrance" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagFrance..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagFrance.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagGabon" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagGabon.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -316,11 +316,11 @@
   <data name="FlagGuinea" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagGuinea.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="FlagGuinea_Bissau" type="System.Resources.ResXFileRef, System.Windows.Forms">
+  <data name="FlagGuinea2Bissau" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagGuinea-Bissau.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagGuyana" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagGuyana..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\Resources\FlagGuyana.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagHaiti" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagHaiti.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -506,7 +506,7 @@
     <value>..\Resources\FlagParaguay.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagPeru" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\FlagPeru..png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+    <value>..\resources\flagperu.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="FlagPoland" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\FlagPoland.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>

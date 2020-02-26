@@ -18,7 +18,7 @@ namespace ItViteaVlaggen01
         public string Name
         {
             get => _name;
-            set => _name = value.Replace("Flag", "").Replace("_", " ");
+            set => _name = BaseReplace(value).Replace("Flag", "").Replace("_", " ");
         }
         /// <summary>
         /// The actual filename. Flag[country].png
@@ -28,7 +28,11 @@ namespace ItViteaVlaggen01
         public string ImgSource
         {
             get => _imgSource;
-            set => _imgSource = String.Format(@"Resources\{0}.png", value);
+            set => _imgSource = String.Format(@"Resources\{0}.png", BaseReplace(value));
+        }
+        private string BaseReplace(string str)
+        {
+            return str.Replace("1", "'").Replace("2", "-");
         }
     }
 
