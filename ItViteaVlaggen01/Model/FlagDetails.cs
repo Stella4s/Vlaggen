@@ -45,7 +45,7 @@ namespace ItViteaVlaggen01
             //set => _imgSource = String.Format(@"Resources\{0}.png", BaseReplace(value));
             set
             {
-                _imgSource = String.Format(@"Resources\{0}.png", BaseReplace(value));
+                _imgSource = String.Format(@"..\Resources\{0}.png", BaseReplace(value));
                 OnPropertyChanged("ImgSource");
             }
         }
