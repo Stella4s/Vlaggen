@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItViteaVlaggen01.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -12,51 +13,34 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using System.Drawing;
-using System.Globalization;
-using System.Reflection;
-using System.Resources;
 using System.Windows.Threading;
 
-namespace ItViteaVlaggen01
+
+
+namespace ItViteaVlaggen01.View
 {
     /// <summary>
-    /// Interaction logic for MainWindow.xaml
+    /// Interaction logic for Quiz.xaml
     /// </summary>
-    public partial class MainWindow : Window
+    public partial class Quiz : UserControl, ISwitchable
     {
-        public Dictionary<int, FlagDetails> FlagDict { get; set; }
-        //Declare variables
         private Random random = new Random();
         string answerButton = "";
-        public List<int> keyList;
+        IDictionary<int, FlagDetails> FlagDict;
 
-        public MainWindow()
+        public Quiz()
         {
             InitializeComponent();
-            FlagDict = new Dictionary<int, FlagDetails>();
-            FillFlagDictionary();
-            keyList = new List<int>(FlagDict.Keys);
+            FlagDetailsViewModel flagDetailsVM = new FlagDetailsViewModel();
+            FlagDict = flagDetailsVM.FlagDict;
+            KeyList = new List<int>(FlagDict.Keys);
         }
 
-        private void FillFlagDictionary()
-        {
-            ResourceSet rsrcSet = Properties.Resources.ResourceManager.GetResourceSet(CultureInfo.CurrentCulture, false, true);
+        //Methods for quiz section.
+        public List<int> KeyList { get; set; }
 
-            var images = typeof(Properties.Resources)
-                    .GetProperties(BindingFlags.Static | BindingFlags.NonPublic |
-                                                         BindingFlags.Public)
-                    .Where(p => p.PropertyType == typeof(Bitmap))
-                    .Select(x => new { x.Name, Image = x.GetValue(null, null) })
-                    .ToList();
 
-            int intID = 0;
-            foreach (var x in images)
-            {
-                FlagDict.Add(intID, new FlagDetails { FileName = x.Name, Name = x.Name, ImgSource = x.Name });
-                intID++;
-            }
-        }
+        //Methods for Quiz Section
         private BitmapImage ReturnImage(string imgSource)
         {
             BitmapImage image = new BitmapImage();
@@ -99,11 +83,11 @@ namespace ItViteaVlaggen01
 
         private void AssignAnswers()
         {
-            int randomKey = random.Next(keyList.Count);
-            var currentFlag = FlagDict[keyList[randomKey]];
+            int randomKey = random.Next(KeyList.Count);
+            var currentFlag = FlagDict[KeyList[randomKey]];
 
             image1.Source = ReturnImage(currentFlag.ImgSource);
-            keyList.RemoveAt(randomKey);
+            KeyList.RemoveAt(randomKey);
             switch (random.Next(1, 5))
             {
                 case 1:
@@ -136,9 +120,9 @@ namespace ItViteaVlaggen01
                 {
                     if (radio.Name != answerButton)
                     {
-                        randomKey = random.Next(keyList.Count);
-                        radio.Content = FlagDict[keyList[randomKey]].Name;
-                        keyList.RemoveAt(randomKey);
+                        randomKey = random.Next(KeyList.Count);
+                        radio.Content = FlagDict[KeyList[randomKey]].Name;
+                        KeyList.RemoveAt(randomKey);
                     }
                 }
             }
@@ -192,6 +176,21 @@ namespace ItViteaVlaggen01
         {
             DisplayAllImages();
         }
+
+
+        //Switcher section.
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Switcher.Switch(new MainMenu());
+        }
+
+        #region ISwitchable Members
+
+        public void UtilizeState(object state)
+        {
+            throw new NotImplementedException();
+        }
+        #endregion
+
     }
 }
-
