@@ -7,12 +7,14 @@ using System.Windows.Controls;
 using System.Drawing;
 using System.Resources;
 using System.ComponentModel;
+using System.Windows.Media.Imaging;
 
 namespace ItViteaVlaggen01
 {
     public class FlagDetails : INotifyPropertyChanged
     {
         private string _name, _imgSource, _fileName;
+        private BitmapImage _imgData;
         /// <summary>
         /// The name of the country that will be used. (based of FileName)
         /// </summary>
@@ -38,7 +40,6 @@ namespace ItViteaVlaggen01
                 OnPropertyChanged("FileName");
             }
         }
-
         public string ImgSource
         {
             get => _imgSource;
@@ -49,10 +50,30 @@ namespace ItViteaVlaggen01
                 OnPropertyChanged("ImgSource");
             }
         }
+        public BitmapImage ImgData
+        {
+            get => _imgData;
+            set
+            {
+                _imgData = ReturnImage(String.Format(@"..\Resources\{0}.png", BaseReplace(ImgSource)));
+                OnPropertyChanged("ImgData");
+            }
+        }
+
         private string BaseReplace(string str)
         {
             return str.Replace("1", "'").Replace("2", "-");
         }
+
+        private BitmapImage ReturnImage(string imgSource)
+        {
+            BitmapImage image = new BitmapImage();
+            image.BeginInit();
+            image.UriSource = new Uri(imgSource, UriKind.Relative);
+            image.EndInit();
+            return image;
+        }
+
 
         #region INotifyPropertyChanged Members
 

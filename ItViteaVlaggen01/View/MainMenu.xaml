@@ -14,6 +14,7 @@
         </Grid.RowDefinitions>
         <Label Content="Welcome to flags of the world." VerticalAlignment="Center" HorizontalContentAlignment="Center" AutomationProperties.IsRowHeader="True" AutomationProperties.Name="AlphaTest"/>
         <Button Content="Start Quiz" Margin="50,0,50,0" Grid.Row="1" VerticalAlignment="Center" Click="Button_Click"/>
+        <Button Content="Overview all Flags" Margin="50,50,50,0" Grid.Row="1" VerticalAlignment="Center" Click="Button_ListAll"/>
 
     </Grid>
 </UserControl>

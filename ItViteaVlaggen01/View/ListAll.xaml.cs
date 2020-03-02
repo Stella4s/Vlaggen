@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ItViteaVlaggen01.ViewModel;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -16,24 +17,27 @@ using System.Windows.Shapes;
 namespace ItViteaVlaggen01.View
 {
     /// <summary>
-    /// Interaction logic for MainMenu.xaml
+    /// Interaction logic for ListAll.xaml
     /// </summary>
-    public partial class MainMenu : UserControl, ISwitchable
+    public partial class ListAll : UserControl
     {
-        public MainMenu()
+        IDictionary<int, FlagDetails> FlagDict;
+        public ListAll()
         {
             InitializeComponent();
-        }
+            FlagDetailsViewModel flagDetailsVM = new FlagDetailsViewModel();
+            FlagDict = flagDetailsVM.FlagDict;
 
-        private void Button_Click(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new Quiz());
+            FlagList = new List<FlagDetails>(FlagDict.Values);
+            this.FlagBox.ItemsSource = FlagList;
         }
-        private void Button_ListAll(object sender, RoutedEventArgs e)
-        {
-            Switcher.Switch(new ListAll());
-        }
+        public List<FlagDetails> FlagList { get; set; }
 
+        //Switcher section.
+        private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
+        {
+            Switcher.Switch(new MainMenu());
+        }
 
         #region ISwitchable Members
 
@@ -42,7 +46,5 @@ namespace ItViteaVlaggen01.View
             throw new NotImplementedException();
         }
         #endregion
-
-       
     }
 }

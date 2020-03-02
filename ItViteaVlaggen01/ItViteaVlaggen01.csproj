@@ -56,6 +56,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="View\ListAll.xaml.cs">
+      <DependentUpon>ListAll.xaml</DependentUpon>
+    </Compile>
     <Compile Include="View\MainMenu.xaml.cs">
       <DependentUpon>MainMenu.xaml</DependentUpon>
     </Compile>
@@ -63,6 +66,10 @@
       <DependentUpon>Quiz.xaml</DependentUpon>
     </Compile>
     <Page Include="PageSwitcher.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\ListAll.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
