@@ -14,7 +14,9 @@
             <RowDefinition/>
             <RowDefinition Height="0.2*"/>
         </Grid.RowDefinitions>
-        <ListView x:Name="FlagBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
+
+        <!--Attempt 1-->
+        <!--<ListView x:Name="FlagBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
             <ItemsControl.ItemsPanel>
                 <ItemsPanelTemplate>
                     <UniformGrid Columns="5" HorizontalAlignment="Stretch"/>
@@ -30,7 +32,61 @@
                    
                 </DataTemplate>
             </ListView.ItemTemplate>
-        </ListView>
+        </ListView>-->
+        
+        
+        <!--Attempt 2-->
+        <ScrollViewer VerticalScrollBarVisibility="Hidden">
+            <ItemsControl Margin="10"
+              x:Name="FlagBox" HorizontalContentAlignment="Stretch">
+
+                <ItemsControl.Template>
+                    <ControlTemplate TargetType="ItemsControl">
+                        <ItemsPresenter/>
+                    </ControlTemplate>
+                </ItemsControl.Template>
+
+                <ItemsControl.ItemsPanel>
+                    <ItemsPanelTemplate>
+                        <UniformGrid Columns="5" HorizontalAlignment="Stretch"/>
+                    </ItemsPanelTemplate>
+                </ItemsControl.ItemsPanel>
+
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <DataTemplate.Resources>
+                            <Style TargetType="TextBlock">
+                                <Setter Property="FontSize" Value="14"/>
+                                <Setter Property="HorizontalAlignment" Value="Center"/>
+                                <Setter Property="TextWrapping" Value="Wrap"/>
+                            </Style>
+                            <Style TargetType="Image">
+                                <Setter Property="MaxHeight" Value="100"/>
+                            </Style>
+                        </DataTemplate.Resources>
+                        <Grid>
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition/>
+                                    <RowDefinition Height="0.5*"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Margin="0" Source="{Binding ImgSource}"/>
+                                <TextBlock  Margin="0" Text="{Binding Name}" Grid.Row="1" />
+                                </Grid>
+                            </Grid>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+
+                <ItemsControl.ItemContainerStyle>
+                <Style>
+                        <!-- <Setter Property="Control.Width" Value="100"/>-->
+                        <Setter Property="Control.Margin" Value="2,0"/>
+                </Style>
+            </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+        </ScrollViewer>
+
         <Button Content="&lt;- Back to Menu" HorizontalAlignment="Center" Margin="20" Grid.Row="1" VerticalAlignment="Top" Padding="5" Click="Button_Click"/>
 
 
