@@ -8,87 +8,63 @@
              d:DesignHeight="450" d:DesignWidth="700">
 
 
+    <DockPanel>
 
-    <Grid Margin="0">
-        <Grid.RowDefinitions>
-            <RowDefinition/>
-            <RowDefinition Height="0.2*"/>
-        </Grid.RowDefinitions>
+        <Button Content="&lt;- Back to Menu" HorizontalAlignment="Center" Margin="5,10" VerticalAlignment="Top" Padding="5" Click="Button_Click"/>
 
-        <!--Attempt 1-->
-        <!--<ListView x:Name="FlagBox" HorizontalAlignment="Stretch" VerticalAlignment="Top" ScrollViewer.CanContentScroll="False" ScrollViewer.HorizontalScrollBarVisibility="Disabled" ScrollViewer.VerticalScrollBarVisibility="Hidden">
-            <ItemsControl.ItemsPanel>
-                <ItemsPanelTemplate>
-                    <UniformGrid Columns="5" HorizontalAlignment="Stretch"/>
-                </ItemsPanelTemplate>
-            </ItemsControl.ItemsPanel>
-            <ListView.ItemTemplate>
-                <DataTemplate>
-             
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Stretch" HorizontalAlignment="Stretch">
-                            <Image Source="{Binding ImgSource}" HorizontalAlignment="Stretch" VerticalAlignment="Top" Stretch="UniformToFill"/>
-                            <TextBlock Text="{Binding Name}" HorizontalAlignment="Center" VerticalAlignment="Bottom" />
-                        </StackPanel>
-                   
-                </DataTemplate>
-            </ListView.ItemTemplate>
-        </ListView>-->
-        
-        
-        <!--Attempt 2-->
-        <ScrollViewer VerticalScrollBarVisibility="Hidden">
-            <ItemsControl Margin="10"
-              x:Name="FlagBox" HorizontalContentAlignment="Stretch">
+        <Grid Margin="5">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ItemsControl x:Name="FlagBox" 
+                              HorizontalContentAlignment="Stretch" >
 
-                <ItemsControl.Template>
-                    <ControlTemplate TargetType="ItemsControl">
-                        <ItemsPresenter/>
-                    </ControlTemplate>
-                </ItemsControl.Template>
+                    <ItemsControl.Template>
+                        <ControlTemplate TargetType="ItemsControl">
+                            <ItemsPresenter/>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="5" HorizontalAlignment="Stretch" Background="WhiteSmoke"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
 
-                <ItemsControl.ItemsPanel>
-                    <ItemsPanelTemplate>
-                        <UniformGrid Columns="5" HorizontalAlignment="Stretch"/>
-                    </ItemsPanelTemplate>
-                </ItemsControl.ItemsPanel>
-
-                <ItemsControl.ItemTemplate>
-                    <DataTemplate>
-                        <DataTemplate.Resources>
-                            <Style TargetType="TextBlock">
-                                <Setter Property="FontSize" Value="14"/>
-                                <Setter Property="HorizontalAlignment" Value="Center"/>
-                                <Setter Property="TextWrapping" Value="Wrap"/>
-                            </Style>
-                            <Style TargetType="Image">
-                                <Setter Property="MaxHeight" Value="100"/>
-                            </Style>
-                        </DataTemplate.Resources>
-                        <Grid>
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <DataTemplate.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                </Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="MaxHeight" Value="120"/>
+                                    <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant"/>
+                                    <Setter Property="Stretch" Value="Uniform"/>
+                                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </DataTemplate.Resources>
+                            
                             <Grid>
                                 <Grid.RowDefinitions>
-                                    <RowDefinition/>
-                                    <RowDefinition Height="0.5*"/>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="0.3*"/>
                                 </Grid.RowDefinitions>
 
-                                <Image Margin="0" Source="{Binding ImgSource}"/>
-                                <TextBlock  Margin="0" Text="{Binding Name}" Grid.Row="1" />
-                                </Grid>
+                                <Image Source="{Binding ImgSource}"/>
+                                <TextBlock Text="{Binding Name}"  Grid.Row="1"/>
                             </Grid>
-                    </DataTemplate>
-                </ItemsControl.ItemTemplate>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
 
-                <ItemsControl.ItemContainerStyle>
-                <Style>
-                        <!-- <Setter Property="Control.Width" Value="100"/>-->
-                        <Setter Property="Control.Margin" Value="2,0"/>
-                </Style>
-            </ItemsControl.ItemContainerStyle>
+                    <ItemsControl.ItemContainerStyle>
+                    <Style>
+                        <Setter Property="Control.Margin" Value="8,16"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
             </ItemsControl>
         </ScrollViewer>
-
-        <Button Content="&lt;- Back to Menu" HorizontalAlignment="Center" Margin="20" Grid.Row="1" VerticalAlignment="Top" Padding="5" Click="Button_Click"/>
-
-
-    </Grid>
+        </Grid>
+    
+    </DockPanel>
 </UserControl>
