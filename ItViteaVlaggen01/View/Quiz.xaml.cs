@@ -24,29 +24,26 @@ namespace ItViteaVlaggen01.View
     /// </summary>
     public partial class Quiz : UserControl, ISwitchable
     {
-        private Random random = new Random();
-        string answerButton = "";
         IDictionary<int, FlagDetails> FlagDict;
-
+        private DispatcherTimer dispatcherTimer;
         public Quiz()
         {
             InitializeComponent();
             FlagDetailsViewModel flagDetailsVM = new FlagDetailsViewModel();
             FlagDict = flagDetailsVM.FlagDict;
-            //KeyList = new List<int>(FlagDict.Keys);
-        }
 
-        //Methods for quiz section.
+            dispatcherTimer = new DispatcherTimer();
+            dispatcherTimer.Tick += new EventHandler(dispatcherTimer_Tick);
+            dispatcherTimer.Interval = TimeSpan.FromMilliseconds(500);
+            
+        }
+ 
         public List<int> KeyList { get; set; }
 
-
-        //Methods for Quiz Section
         /// <summary>
         /// For creating a bitmap image to be displayed.
         /// Imgsource being the pathway to the image to be used.
         /// </summary>
-        /// <param name="imgSource"></param>
-        /// <returns></returns>
         private BitmapImage ReturnImage(string imgSource)
         {
             BitmapImage image = new BitmapImage();
@@ -85,13 +82,9 @@ namespace ItViteaVlaggen01.View
             }
         }
 
-        private void Radiobutton_Checked(object sender, RoutedEventArgs e)
-        {
-            if (startButton.IsEnabled == false)
-                confirmButton.IsEnabled = true;
-        }
-
         //Variables needed in this method.
+        private Random random = new Random();
+        string answerButton = "";
         List<int> randomKeys = new List<int>();
         bool boolRepeat;
         private void AssignAnswers()
@@ -134,6 +127,8 @@ namespace ItViteaVlaggen01.View
                 {
                     if (radio.Name != answerButton)
                     {
+                        /// To make sure that it won't choose double answers.
+                        /// Whilst keeping the Keylist unaltered.
                         do
                         {
                             randomKey = random.Next(KeyList.Count);
@@ -145,7 +140,6 @@ namespace ItViteaVlaggen01.View
                         while (boolRepeat);
                         randomKeys.Add(randomKey);
                         radio.Content = FlagDict[KeyList[randomKey]].Name;
-                        //KeyList.RemoveAt(randomKey);
                     }
                 }
             }
@@ -167,6 +161,7 @@ namespace ItViteaVlaggen01.View
                 {
                     radio.IsChecked = false;
                     radio.Content = "";
+                    radio.Foreground = Brushes.Black;
                 }
             }
             //startButton.IsEnabled = true;
@@ -178,6 +173,11 @@ namespace ItViteaVlaggen01.View
                 RadioButton radio = control as RadioButton;
                 if (radio != null)
                 {
+                    if (radio.Name == answerButton)
+                        radio.Foreground = Brushes.Green;
+                    else
+                        radio.Foreground = Brushes.DarkRed;
+
                     if (radio.IsChecked == true)
                     {
                         if (radio.Name == answerButton)
@@ -187,7 +187,7 @@ namespace ItViteaVlaggen01.View
                         }
                         else
                             labelDisplay.Content = "Wrong!";
-                        break;
+                        //break;
                     }
                 }
             }
@@ -203,7 +203,6 @@ namespace ItViteaVlaggen01.View
             KeyList = new List<int>(FlagDict.Keys);
             intPoints = 0; intCounter = 0;  intRounds = 20; //Temp hardcoding, later number of rounds shall be selectable by user.
         }
-
         private void NextRound()
         {
             if (intCounter < intRounds)
@@ -218,53 +217,30 @@ namespace ItViteaVlaggen01.View
                 labelDisplay.Content = String.Format("You finished! You got {0} out of {1} correct.", intPoints, intRounds);
             }
         }
-        //Timer var to wait a couple seconds before next round.
-        DispatcherTimer timer = new DispatcherTimer();
-        int i = 0;
-        private void TimedWait()
+        private void Confirm()
         {
-            i = 0;
-            timer.Interval = TimeSpan.FromMilliseconds(500);
-            timer.Tick += timer_Tick;
-            timer.Start();
+            //Things which happen before the timer starts
+            CheckAnswer();
             
-            void timer_Tick(object sender, EventArgs e)
-            {
-                i++;
-                timerLabel.Content = i;
-                if (i > 2)
-                {
-                    timer.Stop();
-                }
-            }
+            //Start the timer
+            dispatcherTimer.Start();
         }
-
-
-        //Button click methods.
+        
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
-            CheckAnswer();
-            TimedWait();
+            confirmButton.IsEnabled = false;
+            Confirm();
+        }
+        private void dispatcherTimer_Tick(object sender, EventArgs e)
+        {
+            //Things which happen after 1 timer interval
             NextRound();
 
-            /*foreach (Control control in grid1.Children)
-            {
-                RadioButton radio = control as RadioButton;
-                if (radio != null)
-                {
-                    if (radio.IsChecked == true)
-                    {
-                        if (radio.Name == answerButton)
-                            startButton.Content = "Correct! Play Again?";
-                        else
-                            startButton.Content = "Wrong! Try Again?";
-                        break;
-                    }
-                }
-            }*/
-
-            confirmButton.IsEnabled = false;
+            //Disable the timer
+            dispatcherTimer.IsEnabled = false;
         }
+
+
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             NewGame();
@@ -275,6 +251,14 @@ namespace ItViteaVlaggen01.View
         private void ImgTest_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllImages();
+        }
+        bool fastMode;
+        private void Radiobutton_Checked(object sender, RoutedEventArgs e)
+        {
+            if (fastMode)
+                Confirm();
+            else if (startButton.IsEnabled == false)
+                confirmButton.IsEnabled = true;
         }
 
 
