@@ -33,7 +33,7 @@ namespace ItViteaVlaggen01.View
             InitializeComponent();
             FlagDetailsViewModel flagDetailsVM = new FlagDetailsViewModel();
             FlagDict = flagDetailsVM.FlagDict;
-            KeyList = new List<int>(FlagDict.Keys);
+            //KeyList = new List<int>(FlagDict.Keys);
         }
 
         //Methods for quiz section.
@@ -41,6 +41,12 @@ namespace ItViteaVlaggen01.View
 
 
         //Methods for Quiz Section
+        /// <summary>
+        /// For creating a bitmap image to be displayed.
+        /// Imgsource being the pathway to the image to be used.
+        /// </summary>
+        /// <param name="imgSource"></param>
+        /// <returns></returns>
         private BitmapImage ReturnImage(string imgSource)
         {
             BitmapImage image = new BitmapImage();
@@ -49,6 +55,10 @@ namespace ItViteaVlaggen01.View
             image.EndInit();
             return image;
         }
+        /// <summary>
+        /// Method for testintg if all images are displayed correctly.
+        /// Will cycle through all flag images and display them along with their name.
+        /// </summary>
         private void DisplayAllImages()
         {
             imgTestButton.IsEnabled = false;
@@ -81,6 +91,9 @@ namespace ItViteaVlaggen01.View
                 confirmButton.IsEnabled = true;
         }
 
+        //Variables needed in this method.
+        List<int> randomKeys = new List<int>();
+        bool boolRepeat;
         private void AssignAnswers()
         {
             int randomKey = random.Next(KeyList.Count);
@@ -113,6 +126,7 @@ namespace ItViteaVlaggen01.View
                 default:
                     break;
             }
+            
             foreach (Control control in grid1.Children)
             {
                 RadioButton radio = control as RadioButton;
@@ -120,17 +134,120 @@ namespace ItViteaVlaggen01.View
                 {
                     if (radio.Name != answerButton)
                     {
-                        randomKey = random.Next(KeyList.Count);
+                        do
+                        {
+                            randomKey = random.Next(KeyList.Count);
+                            if (randomKeys.Contains(randomKey))
+                                boolRepeat = true;
+                            else
+                                boolRepeat = false;
+                        }
+                        while (boolRepeat);
+                        randomKeys.Add(randomKey);
                         radio.Content = FlagDict[KeyList[randomKey]].Name;
-                        KeyList.RemoveAt(randomKey);
+                        //KeyList.RemoveAt(randomKey);
                     }
                 }
             }
+            randomKeys.Clear();
         }
+        /// <summary>
+        /// Resets the game, unChecking each radioButton and clearing all content.
+        /// </summary>
+        private void ResetGame()
+        {
+            intCounter++;
+            counterLabel.Content = intCounter;
+            image1.Source = null;
+            labelDisplay.Content = null;
+            foreach (Control control in grid1.Children)
+            {
+                RadioButton radio = control as RadioButton;
+                if (radio != null)
+                {
+                    radio.IsChecked = false;
+                    radio.Content = "";
+                }
+            }
+            //startButton.IsEnabled = true;
+        }
+        private void CheckAnswer()
+        {
+            foreach (Control control in grid1.Children)
+            {
+                RadioButton radio = control as RadioButton;
+                if (radio != null)
+                {
+                    if (radio.IsChecked == true)
+                    {
+                        if (radio.Name == answerButton)
+                        {
+                            intPoints++;
+                            labelDisplay.Content = "Correct!";
+                        }
+                        else
+                            labelDisplay.Content = "Wrong!";
+                        break;
+                    }
+                }
+            }
+            
+        }
+        //Variables for rounds and points.
+        int intRounds, intCounter, intPoints;
+        /// <summary>
+        /// Makes new KeyList, resets points and counter. 
+        /// </summary>
+        private void NewGame()
+        {
+            KeyList = new List<int>(FlagDict.Keys);
+            intPoints = 0; intCounter = 0;  intRounds = 20; //Temp hardcoding, later number of rounds shall be selectable by user.
+        }
+
+        private void NextRound()
+        {
+            if (intCounter < intRounds)
+            {
+                ResetGame();
+                AssignAnswers();
+                confirmButton.IsEnabled = true;
+            }
+            else
+            {
+                startButton.IsEnabled = true;
+                labelDisplay.Content = String.Format("You finished! You got {0} out of {1} correct.", intPoints, intRounds);
+            }
+        }
+        //Timer var to wait a couple seconds before next round.
+        DispatcherTimer timer = new DispatcherTimer();
+        int i = 0;
+        private void TimedWait()
+        {
+            i = 0;
+            timer.Interval = TimeSpan.FromMilliseconds(500);
+            timer.Tick += timer_Tick;
+            timer.Start();
+            
+            void timer_Tick(object sender, EventArgs e)
+            {
+                i++;
+                timerLabel.Content = i;
+                if (i > 2)
+                {
+                    timer.Stop();
+                }
+            }
+        }
+
+
+        //Button click methods.
         private void ConfirmButton_Click(object sender, RoutedEventArgs e)
         {
+            CheckAnswer();
+            TimedWait();
+            NextRound();
 
-            foreach (Control control in grid1.Children)
+            /*foreach (Control control in grid1.Children)
             {
                 RadioButton radio = control as RadioButton;
                 if (radio != null)
@@ -144,34 +261,17 @@ namespace ItViteaVlaggen01.View
                         break;
                     }
                 }
-            }
-            startButton.IsEnabled = true;
+            }*/
+
             confirmButton.IsEnabled = false;
-        }
-        /// <summary>
-        /// Resets the game, unChecking each radioButton and clearing all content.
-        /// </summary>
-        private void ResetGame()
-        {
-            image1.Source = null;
-            foreach (Control control in grid1.Children)
-            {
-                RadioButton radio = control as RadioButton;
-                if (radio != null)
-                {
-                    radio.IsChecked = false;
-                    radio.Content = "";
-                }
-            }
-            startButton.IsEnabled = true;
         }
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
+            NewGame();
             ResetGame();
             AssignAnswers();
             startButton.IsEnabled = false;
         }
-
         private void ImgTest_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllImages();
