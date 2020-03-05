@@ -299,6 +299,21 @@ namespace ItViteaVlaggen01.View
             }
         }
 
+        private void ContentPresenter_AccessKeyPressed(object sender, AccessKeyPressedEventArgs e)
+        {
+
+        }
+
+        private void ContentPresenter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void Setter_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
 
         //Switcher section.
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)
