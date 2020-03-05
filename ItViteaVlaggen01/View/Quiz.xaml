@@ -14,6 +14,9 @@
             <Setter Property="VerticalAlignment" Value="Center" />
             <Setter Property="FontWeight" Value="Medium"/>
         </Style>
+        <Style x:Key="RadioMenuStyle" TargetType="RadioButton">
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
 
         <Style TargetType="Button">
             <Setter Property="FontWeight" Value="Medium"/>
@@ -23,9 +26,14 @@
             <Setter Property="FontWeight" Value="Medium"/>
         </Style>
 
-        <Style x:Key="HiddenExpanderStyle" TargetType="{x:Type Expander}">
-            <Setter Property="Opacity" Value="0"/>
-        </Style>
+        <ControlTemplate x:Key="RadioButtonControlTemplate" TargetType="{x:Type RadioButton}">
+            <ToggleButton Content="{Binding Content, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" />
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Grid.Background" Value="Black"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
 
 
     </UserControl.Resources>
@@ -36,32 +44,38 @@
             <Grid.RowDefinitions>
                 <RowDefinition Height="0.5*"/>
                 <RowDefinition/>
-                <RowDefinition Height="0.5*"/>
+                <RowDefinition Height="0.2*"/>
             </Grid.RowDefinitions>
             <StackPanel>
                 <Button Content="&lt;- Back to Menu"  Margin="5,5" Padding="4"  Click="Button_Click"/>
                 <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition/>
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label  Content="Round:" Padding="4"/>
                     <Label x:Name="counterLabel" Content="" Padding="4" Grid.Column="1"/>
+                    <Label  Content="Total:" Padding="4" Grid.Row="1"/>
+                    <Label x:Name="totalRoundLabel" Content="" Padding="4" Grid.Column="1" Grid.Row="1"/>
                 </Grid>
             </StackPanel>
             <StackPanel Grid.Row="1">
-                <Button x:Name="startButton"   Content="Start Game" Margin="5,5" Padding="4" Click="StartButton_Click"/>
-                <Expander  Margin="5,0" Style="{StaticResource HiddenExpanderStyle}" >
-                    <StackPanel>
-                        <Button Content="Option1" Margin="0,2" Padding="4"/>
-                        <Button Content="Option2" Margin="0,2" Padding="4"/>
-                        <Button Content="Option3" Margin="0,2" Padding="4"/>
-                        <Button Content="Option4" Margin="0,2" Padding="4"/>
-                    </StackPanel>
-                </Expander>
-
-
-                <Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>
+                <Button x:Name="startButton"   Content="Start Game" Margin="5,5,5,2" Padding="4" Click="StartButton_Click"/>
+                <Button x:Name="optionButton"  Content="Options" Margin="5,5,5,2" Padding="4" Click="OptionButton_Click" ToolTip="Click to show options for changing the length of the game and turning quickmode on or off."/>
+                <StackPanel x:Name="StackMenu1" Margin="5,0" >
+                    <RadioButton x:Name="R25" Content="25 Rounds" Margin="0,2" Padding="4" Click="RoundsButton_Click" Template="{DynamicResource RadioButtonControlTemplate}" Style="{StaticResource RadioMenuStyle}" />
+                    <RadioButton x:Name="R50" Content="50 Rounds" Margin="0,2" Padding="4" Click="RoundsButton_Click" Template="{DynamicResource RadioButtonControlTemplate}" Style="{StaticResource RadioMenuStyle}" />
+                    <RadioButton x:Name="R100" Content="100 Rounds" Margin="0,2" Padding="4" Click="RoundsButton_Click" Template="{DynamicResource RadioButtonControlTemplate}" Style="{StaticResource RadioMenuStyle}" />
+                    <RadioButton x:Name="RAll" Content="All Flags" Margin="0,2" Padding="4" ToolTip="194 Rounds" Click="RoundsButton_Click" Template="{DynamicResource RadioButtonControlTemplate}" Style="{StaticResource RadioMenuStyle}" />
+                    <Button Content="Quick Mode" Margin="0,2" Padding="4" ToolTip="Your answers are final, no changing them. Recommended for game lengths of 50 rounds and above."/>
+                </StackPanel>
+                
+                <!--<Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>-->
+                
 
             </StackPanel>
             <Button x:Name="confirmButton" Content="Confirm" Margin="5,5"  Padding="4" Click="ConfirmButton_Click" IsEnabled="False" Grid.Row="2"/>
@@ -82,9 +96,9 @@
                         <ColumnDefinition/>
                     </Grid.ColumnDefinitions>
                     <Label x:Name="labelDisplay" Content="" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
-                    <RadioButton x:Name="rButton1" Content="" Checked="Radiobutton_Checked" Grid.Row="1"/>
-                    <RadioButton x:Name="rButton2" Content="" Checked="Radiobutton_Checked" Grid.Column="1" Grid.Row="1"/>
-                    <RadioButton x:Name="rButton3" Content="" Checked="Radiobutton_Checked" Grid.Row="2"/>
+                    <RadioButton x:Name="rButton1" Content="" Checked="Radiobutton_Checked" Grid.Row="1" />
+                    <RadioButton x:Name="rButton2" Content="" Checked="Radiobutton_Checked" Grid.Column="1" Grid.Row="1" />
+                    <RadioButton x:Name="rButton3" Content="" Checked="Radiobutton_Checked" Grid.Row="2" />
                     <RadioButton x:Name="rButton4" Content="" Checked="Radiobutton_Checked" Grid.Row="2" Grid.Column="1"/>
                 </Grid>
 

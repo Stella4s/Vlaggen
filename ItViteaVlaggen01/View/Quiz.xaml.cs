@@ -56,7 +56,7 @@ namespace ItViteaVlaggen01.View
         /// Method for testintg if all images are displayed correctly.
         /// Will cycle through all flag images and display them along with their name.
         /// </summary>
-        private void DisplayAllImages()
+        /*private void DisplayAllImages()
         {
             imgTestButton.IsEnabled = false;
             int i = 30;
@@ -80,7 +80,7 @@ namespace ItViteaVlaggen01.View
                     i++;
                 }
             }
-        }
+        }*/
 
         //Variables needed in this method.
         private Random random = new Random();
@@ -194,14 +194,15 @@ namespace ItViteaVlaggen01.View
             
         }
         //Variables for rounds and points.
-        int intRounds, intCounter, intPoints;
+        int intRounds = 25, intCounter, intPoints;
         /// <summary>
         /// Makes new KeyList, resets points and counter. 
         /// </summary>
         private void NewGame()
         {
             KeyList = new List<int>(FlagDict.Keys);
-            intPoints = 0; intCounter = 0;  intRounds = 20; //Temp hardcoding, later number of rounds shall be selectable by user.
+            intPoints = 0; intCounter = 0;
+            totalRoundLabel.Content = intRounds;
         }
         private void NextRound()
         {
@@ -248,10 +249,10 @@ namespace ItViteaVlaggen01.View
             AssignAnswers();
             startButton.IsEnabled = false;
         }
-        private void ImgTest_Click(object sender, RoutedEventArgs e)
+        /*private void ImgTest_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllImages();
-        }
+        }*/
         bool fastMode;
         private void Radiobutton_Checked(object sender, RoutedEventArgs e)
         {
@@ -259,6 +260,43 @@ namespace ItViteaVlaggen01.View
                 Confirm();
             else if (startButton.IsEnabled == false)
                 confirmButton.IsEnabled = true;
+        }
+
+        private void OptionButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (StackMenu1.Height == 0)
+                StackMenu1.Height = Double.NaN;
+            else
+                StackMenu1.Height = 0;
+        }
+
+        private void RoundsButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (sender is Button button)
+            {
+                switch (button.Name)
+                {
+                    case "R25":
+                        intRounds = 25;
+                        break;
+
+                    case "R50":
+                        intRounds = 50;
+                        break;
+
+                    case "R100":
+                        intRounds = 100;
+                        break;
+
+                    case "RAll":
+                        intRounds = FlagDict.Count;
+                        break;
+
+                    default:
+                        intRounds = 25;
+                        break;
+                }
+            }
         }
 
 
