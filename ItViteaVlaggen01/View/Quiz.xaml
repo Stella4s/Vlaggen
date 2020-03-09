@@ -24,7 +24,7 @@
         </Style>
 
 
-        <Style x:Key="ToggleButtonMenu" TargetType="{x:Type ToggleButton}">
+        <!--<Style x:Key="ToggleButtonMenu" TargetType="{x:Type ToggleButton}">
             <Setter Property="Template">
                 <Setter.Value>
                     <ControlTemplate TargetType="{x:Type RadioButton}">
@@ -44,10 +44,54 @@
                     <Setter Property="Background" Value="Crimson" />
                 </Trigger>
             </Style.Triggers>
+        </Style>-->
+
+        <ControlTemplate x:Key="RadioMenuButton" TargetType="RadioButton">
+            <ToggleButton x:Name="buttonElement"  IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}"  Background="{TemplateBinding Background}">
+                <VisualStateManager.VisualStateGroups>
+                    <VisualStateGroup Name="CommonStates">
+                        <VisualState Name="Normal">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="buttonElement" 
+                                                Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                To="{TemplateBinding Background}"
+                                                Duration="0:0:0.3"/>        
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState Name="IsMouseOver">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="buttonElement" 
+                                                Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                To="LightBlue"
+                                                Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </VisualState>
+                        <VisualState Name="IsChecked">
+                            <Storyboard>
+                                <ColorAnimation Storyboard.TargetName="buttonElement"
+                                                Storyboard.TargetProperty="(Background).(SolidColorBrush.Color)"
+                                                To="Crimson"
+                                                Duration="0:0:0.3"/>
+                            </Storyboard>
+                        </VisualState>
+                    </VisualStateGroup>
+                </VisualStateManager.VisualStateGroups>
+                <!--<Rectangle x:Name="buttonElement" Fill="{TemplateBinding Background}" Stroke="{TemplateBinding BorderBrush}"/>-->
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Margin}"/>
+            </ToggleButton>
+
+            <!--<ControlTemplate.Triggers>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Fill" TargetName="buttonElement" Value="Crimson"/>
+                </Trigger>
+            </ControlTemplate.Triggers>-->
+        </ControlTemplate>
+        
+        <Style x:Key="RadioMenuStyle" TargetType="RadioButton">
+            <Setter Property="FontWeight" Value="Medium"/>
+            <Setter Property="Background" Value="#FFDDDDDD"/>
+            <Setter Property="Padding" Value="4"/>
         </Style>
-
-    
-
 
     </UserControl.Resources>
 
@@ -60,6 +104,7 @@
                 <RowDefinition Height="0.2*"/>
             </Grid.RowDefinitions>
             <StackPanel>
+              
                 <Button Content="&lt;- Back to Menu"  Margin="5,5" Padding="4"  Click="Button_Click"/>
                 <Grid>
                     <Grid.RowDefinitions>
@@ -76,19 +121,20 @@
                     <Label x:Name="totalRoundLabel" Content="" Padding="4" Grid.Column="1" Grid.Row="1"/>
                 </Grid>
             </StackPanel>
+            
             <StackPanel Grid.Row="1">
                 <Button x:Name="startButton"   Content="Start Game" Margin="5,5,5,2" Padding="4" Click="StartButton_Click"/>
                 <Button x:Name="optionButton"  Content="Options" Margin="5,5,5,2" Padding="4" Click="OptionButton_Click" ToolTip="Click to show options for changing the length of the game and turning quickmode on or off."/>
                 <StackPanel x:Name="StackMenu1" Margin="5,0" >
-                    <RadioButton x:Name="R25" Content="25 Rounds" Margin="0,2" Padding="4" Click="RoundsButton_Click"  Style="{DynamicResource ToggleButtonMenu}"/>
-                    <RadioButton x:Name="R50" Content="50 Rounds" Margin="0,2" Padding="4" Click="RoundsButton_Click"  Style="{DynamicResource ToggleButtonMenu}"/>
-                    <RadioButton x:Name="R100" Content="100 Rounds" Margin="0,2" Padding="4" Click="RoundsButton_Click" Style="{DynamicResource ToggleButtonMenu}" />
-                    <RadioButton x:Name="RAll" Content="All Flags" Margin="0,2" Padding="4" ToolTip="194 Rounds" Click="RoundsButton_Click"  Style="{DynamicResource ToggleButtonMenu}"/>
+                    <RadioButton x:Name="R25" Content="25 Rounds" Margin="0,2"   Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="R50" Content="50 Rounds" Margin="0,2"   Click="RoundsButton_Click"  Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="R100" Content="100 Rounds" Margin="0,2" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="RAll" Content="All Flags" Margin="0,2" ToolTip="194 Rounds" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
                     <Button Content="Quick Mode" Margin="0,2" Padding="4" ToolTip="Your answers are final, no changing them. Recommended for game lengths of 50 rounds and above."/>
                 </StackPanel>
-              
+
                 <!--<Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>-->
-                
+
 
             </StackPanel>
             <Button x:Name="confirmButton" Content="Confirm" Margin="5,5"  Padding="4" Click="ConfirmButton_Click" IsEnabled="False" Grid.Row="2"/>
