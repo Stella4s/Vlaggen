@@ -247,13 +247,14 @@ namespace ItViteaVlaggen01.View
             NewGame();
             ResetGame();
             AssignAnswers();
+            StackMenu1.Height = 0;
             startButton.IsEnabled = false;
         }
         /*private void ImgTest_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllImages();
         }*/
-        bool fastMode;
+
         private void Radiobutton_Checked(object sender, RoutedEventArgs e)
         {
             if (fastMode)
@@ -272,9 +273,10 @@ namespace ItViteaVlaggen01.View
 
         private void RoundsButton_Click(object sender, RoutedEventArgs e)
         {
-            if (sender is Button button)
+            RadioButton radioBtn = (RadioButton)sender;
+            if (radioBtn.IsChecked == true)
             {
-                switch (button.Name)
+                switch (radioBtn.Name)
                 {
                     case "R25":
                         intRounds = 25;
@@ -291,29 +293,19 @@ namespace ItViteaVlaggen01.View
                     case "RAll":
                         intRounds = FlagDict.Count;
                         break;
-
-                    default:
-                        intRounds = 25;
-                        break;
                 }
             }
         }
-
-        private void ContentPresenter_AccessKeyPressed(object sender, AccessKeyPressedEventArgs e)
+        bool fastMode;
+        private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
-
+            fastMode = true;
         }
 
-        private void ContentPresenter_Click(object sender, RoutedEventArgs e)
+        private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
-
+            fastMode = false;
         }
-
-        private void Setter_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
-
 
         //Switcher section.
         private void Button_Click(object sender, System.Windows.RoutedEventArgs e)

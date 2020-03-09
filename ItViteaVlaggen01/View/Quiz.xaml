@@ -23,6 +23,9 @@
             <Setter Property="FontWeight" Value="Medium"/>
         </Style>
 
+        <Style TargetType="ToggleButton">
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
 
         <ControlTemplate x:Key="ToggleButtonMenuTemplate" TargetType="{x:Type ToggleButton}">
             <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
@@ -58,7 +61,7 @@
         </ControlTemplate>
 
         <ControlTemplate x:Key="RadioMenuButton" TargetType="RadioButton">
-            <ToggleButton x:Name="buttonElement"  IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+            <ToggleButton IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
                           Template="{StaticResource ToggleButtonMenuTemplate}"
                           Background="{TemplateBinding Background}">
                 <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Margin}" />
@@ -66,7 +69,6 @@
         </ControlTemplate>
 
         <Style x:Key="RadioMenuStyle" TargetType="RadioButton">
-            <Setter Property="FontWeight" Value="Medium"/>
             <Setter Property="Background" Value="#FFDDDDDD"/>
             <Setter Property="Padding" Value="4"/>
         </Style>
@@ -104,12 +106,12 @@
             <StackPanel Grid.Row="1">
                 <Button x:Name="startButton"   Content="Start Game" Margin="5,5,5,2" Padding="4" Click="StartButton_Click"/>
                 <Button x:Name="optionButton"  Content="Options" Margin="5,5,5,2" Padding="4" Click="OptionButton_Click" ToolTip="Click to show options for changing the length of the game and turning quickmode on or off."/>
-                <StackPanel x:Name="StackMenu1" Margin="5,0" >
-                    <RadioButton x:Name="R25" Content="25 Rounds" Margin="0,2"   Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
-                    <RadioButton x:Name="R50" Content="50 Rounds" Margin="0,2"   Click="RoundsButton_Click"  Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
-                    <RadioButton x:Name="R100" Content="100 Rounds" Margin="0,2" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
-                    <RadioButton x:Name="RAll" Content="All Flags" Margin="0,2" ToolTip="194 Rounds" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
-                    <Button Content="Quick Mode" Margin="0,2" Padding="4" ToolTip="Your answers are final, no changing them. Recommended for game lengths of 50 rounds and above."/>
+                <StackPanel x:Name="StackMenu1" Height="0" Margin="5,0" >
+                    <RadioButton x:Name="R25"   Content="25 Rounds" Margin="0,2" IsChecked="True"  Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="R50"   Content="50 Rounds" Margin="0,2"   Click="RoundsButton_Click"  Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="R100"  Content="100 Rounds" Margin="0,2" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="RAll"  Content="All Flags" Margin="0,2" ToolTip="194 Rounds" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <ToggleButton Content="Quick Mode" Margin="0,2" Padding="4" ToolTip="Your answers are final. Recommended for game lengths of 50 rounds and above." Template="{StaticResource ToggleButtonMenuTemplate}" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
                 </StackPanel>
 
                 <!--<Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>-->
