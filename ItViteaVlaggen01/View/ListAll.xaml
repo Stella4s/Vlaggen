@@ -1,0 +1,70 @@
+﻿<UserControl x:Class="ItViteaVlaggen01.View.ListAll"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ItViteaVlaggen01.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700">
+
+
+    <DockPanel>
+
+        <Button Content="&lt;- Back to Menu" HorizontalAlignment="Center" Margin="5,10" VerticalAlignment="Top" Padding="5" Click="Button_Click"/>
+
+        <Grid Margin="5">
+            <ScrollViewer VerticalScrollBarVisibility="Hidden">
+                <ItemsControl x:Name="FlagBox" 
+                              HorizontalContentAlignment="Stretch" >
+
+                    <ItemsControl.Template>
+                        <ControlTemplate TargetType="ItemsControl">
+                            <ItemsPresenter/>
+                        </ControlTemplate>
+                    </ItemsControl.Template>
+                    <ItemsControl.ItemsPanel>
+                        <ItemsPanelTemplate>
+                            <UniformGrid Columns="5" HorizontalAlignment="Stretch" Background="WhiteSmoke"/>
+                        </ItemsPanelTemplate>
+                    </ItemsControl.ItemsPanel>
+
+                    <ItemsControl.ItemTemplate>
+                        <DataTemplate>
+                            <DataTemplate.Resources>
+                                <Style TargetType="TextBlock">
+                                    <Setter Property="FontSize" Value="14"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                    <Setter Property="TextWrapping" Value="Wrap"/>
+                                </Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="MaxHeight" Value="120"/>
+                                    <Setter Property="RenderOptions.BitmapScalingMode" Value="Fant"/>
+                                    <Setter Property="Stretch" Value="Uniform"/>
+                                    <Setter Property="VerticalAlignment" Value="Stretch"/>
+                                    <Setter Property="HorizontalAlignment" Value="Center"/>
+                                </Style>
+                            </DataTemplate.Resources>
+                            
+                            <Grid>
+                                <Grid.RowDefinitions>
+                                    <RowDefinition Height="1*"/>
+                                    <RowDefinition Height="0.3*"/>
+                                </Grid.RowDefinitions>
+
+                                <Image Source="{Binding ImgSource}"/>
+                                <TextBlock Text="{Binding Name}"  Grid.Row="1"/>
+                            </Grid>
+                        </DataTemplate>
+                    </ItemsControl.ItemTemplate>
+
+                    <ItemsControl.ItemContainerStyle>
+                    <Style>
+                        <Setter Property="Control.Margin" Value="8,16"/>
+                    </Style>
+                </ItemsControl.ItemContainerStyle>
+            </ItemsControl>
+        </ScrollViewer>
+        </Grid>
+    
+    </DockPanel>
+</UserControl>

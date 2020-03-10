@@ -1,0 +1,152 @@
+﻿<UserControl x:Class="ItViteaVlaggen01.View.Quiz"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:ItViteaVlaggen01.View"
+             mc:Ignorable="d" 
+             d:DesignHeight="450" d:DesignWidth="700">
+
+    <UserControl.Resources>
+
+        <Style TargetType="RadioButton">
+            <Setter Property="HorizontalAlignment" Value="Center" />
+            <Setter Property="VerticalAlignment" Value="Center" />
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <Style TargetType="Button">
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <Style TargetType="Label">
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <Style TargetType="ToggleButton">
+            <Setter Property="FontWeight" Value="Medium"/>
+        </Style>
+
+        <ControlTemplate x:Key="ToggleButtonMenuTemplate" TargetType="{x:Type ToggleButton}">
+            <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" 
+                    Background="{TemplateBinding Background}" SnapsToDevicePixels="True">
+                
+                <ContentPresenter x:Name="contentPresenter" ContentTemplate="{TemplateBinding ContentTemplate}" Content="{TemplateBinding Content}" 
+                                  ContentStringFormat="{TemplateBinding ContentStringFormat}" Focusable="False" 
+                                  HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" 
+                                  SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+            </Border>
+            <ControlTemplate.Triggers>
+                <Trigger Property="Button.IsDefaulted" Value="True">
+                    <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFBEE6FD"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF3C7FB1"/>
+                </Trigger>
+                <Trigger Property="IsPressed" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="#FFC4E5F6"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FF2C628B"/>
+                </Trigger>
+                <Trigger Property="IsChecked" Value="True">
+                    <Setter Property="Background" TargetName="border" Value="DarkGray"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="Black"/>
+                </Trigger>
+                <Trigger Property="IsEnabled" Value="False">
+                    <Setter Property="Background" TargetName="border" Value="#FFF4F4F4"/>
+                    <Setter Property="BorderBrush" TargetName="border" Value="#FFADB2B5"/>
+                    <Setter Property="Foreground" Value="#FF838383"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="RadioMenuButton" TargetType="RadioButton">
+            <ToggleButton IsChecked="{Binding IsChecked, Mode=TwoWay, RelativeSource={RelativeSource TemplatedParent}}" 
+                          Template="{StaticResource ToggleButtonMenuTemplate}"
+                          Background="{TemplateBinding Background}">
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" Margin="{TemplateBinding Margin}" />
+            </ToggleButton>
+        </ControlTemplate>
+
+        <Style x:Key="RadioMenuStyle" TargetType="RadioButton">
+            <Setter Property="Background" Value="#FFDDDDDD"/>
+            <Setter Property="Padding" Value="4"/>
+        </Style>
+
+    </UserControl.Resources>
+
+    <DockPanel>
+
+        <Grid Margin="5">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="0.5*"/>
+                <RowDefinition/>
+                <RowDefinition Height="0.2*"/>
+            </Grid.RowDefinitions>
+            <StackPanel>
+
+                <Button Content="&lt;- Back to Menu"  Margin="5,5" Padding="4"  Click="Button_Click"/>
+                <Grid Name="roundsGrid" Opacity="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label  Content="Round:" Padding="4"/>
+                    <Label x:Name="counterLabel" Content="" Padding="4" Grid.Column="1"/>
+                    <Label  Content="Total:" Padding="4" Grid.Row="1"/>
+                    <Label x:Name="totalRoundLabel" Content="" Padding="4" Grid.Column="1" Grid.Row="1"/>
+                </Grid>
+               
+            </StackPanel>
+
+            <StackPanel Grid.Row="1">
+                <Button x:Name="startButton"   Content="Start Game" Margin="5,5,5,2" Padding="4" Click="StartButton_Click"/>
+                <Button x:Name="optionButton"  Content="Options" Margin="5,5,5,2" Padding="4" Click="OptionButton_Click" ToolTip="Click to show options for changing the length of the game."/>
+                <StackPanel x:Name="StackMenu1" Height="0" Margin="5,0" >
+                    <RadioButton x:Name="R25"   Content="25 Rounds" Margin="0,2" IsChecked="True"  Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="R50"   Content="50 Rounds" Margin="0,2"   Click="RoundsButton_Click"  Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="R100"  Content="100 Rounds" Margin="0,2" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                    <RadioButton x:Name="RAll"  Content="All Flags" Margin="0,2" ToolTip="194 Rounds" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
+                </StackPanel>
+                <ToggleButton Content="Quick Mode" Margin="5,2" Padding="4" ToolTip="Your answers are final. Recommended for game lengths of 50 rounds and above." Template="{StaticResource ToggleButtonMenuTemplate}" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
+
+                <!--Button for testing if all images are displayed correctly during runtime. 
+                <Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>
+                -->
+
+
+            </StackPanel>
+            <Button x:Name="confirmButton" Content="Confirm" Margin="5,5"  Padding="4" Click="ConfirmButton_Click" IsEnabled="False" Grid.Row="2"/>
+
+        </Grid>
+
+        <Grid Margin="5" Background="WhiteSmoke">
+
+            <DockPanel LastChildFill="False" Margin="5">
+                <Grid x:Name="grid1" VerticalAlignment="Top" DockPanel.Dock="Bottom" MinHeight="120" Margin="5">
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition/>
+                        <ColumnDefinition/>
+                    </Grid.ColumnDefinitions>
+                    <Label x:Name="labelDisplay" Content="" HorizontalContentAlignment="Center" Grid.ColumnSpan="2" />
+                    <RadioButton x:Name="rButton1" Content="" Checked="Radiobutton_Checked" Grid.Row="1" />
+                    <RadioButton x:Name="rButton2" Content="" Checked="Radiobutton_Checked" Grid.Column="1" Grid.Row="1" />
+                    <RadioButton x:Name="rButton3" Content="" Checked="Radiobutton_Checked" Grid.Row="2" />
+                    <RadioButton x:Name="rButton4" Content="" Checked="Radiobutton_Checked" Grid.Row="2" Grid.Column="1"/>
+                </Grid>
+
+                <Image x:Name="image1" DockPanel.Dock="Top"/>
+            </DockPanel>
+
+        </Grid>
+    </DockPanel>
+</UserControl>
