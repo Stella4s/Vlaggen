@@ -53,7 +53,7 @@ namespace ItViteaVlaggen01.View
             return image;
         }
         /// <summary>
-        /// Method for testintg if all images are displayed correctly.
+        /// Method for testintg if all images are displayed correctly during runtime.
         /// Will cycle through all flag images and display them along with their name.
         /// </summary>
         /*private void DisplayAllImages()
@@ -150,8 +150,6 @@ namespace ItViteaVlaggen01.View
         /// </summary>
         private void ResetGame()
         {
-            intCounter++;
-            counterLabel.Content = intCounter;
             image1.Source = null;
             labelDisplay.Content = null;
             foreach (Control control in grid1.Children)
@@ -164,7 +162,6 @@ namespace ItViteaVlaggen01.View
                     radio.Foreground = Brushes.Black;
                 }
             }
-            //startButton.IsEnabled = true;
         }
         private void CheckAnswer()
         {
@@ -187,7 +184,6 @@ namespace ItViteaVlaggen01.View
                         }
                         else
                             labelDisplay.Content = "Wrong!";
-                        //break;
                     }
                 }
             }
@@ -196,7 +192,7 @@ namespace ItViteaVlaggen01.View
         //Variables for rounds and points.
         int intRounds = 25, intCounter, intPoints;
         /// <summary>
-        /// Makes new KeyList, resets points and counter. 
+        /// Makes new KeyList for each game, resets points and counter. 
         /// </summary>
         private void NewGame()
         {
@@ -210,11 +206,13 @@ namespace ItViteaVlaggen01.View
             {
                 ResetGame();
                 AssignAnswers();
-                confirmButton.IsEnabled = true;
             }
             else
             {
+                ResetGame();
                 startButton.IsEnabled = true;
+                optionButton.IsEnabled = true;
+                roundsGrid.Opacity = 0;
                 labelDisplay.Content = String.Format("You finished! You got {0} out of {1} correct.", intPoints, intRounds);
             }
         }
@@ -235,6 +233,8 @@ namespace ItViteaVlaggen01.View
         private void dispatcherTimer_Tick(object sender, EventArgs e)
         {
             //Things which happen after 1 timer interval
+            intCounter++;
+            counterLabel.Content = intCounter;
             NextRound();
 
             //Disable the timer
@@ -245,11 +245,18 @@ namespace ItViteaVlaggen01.View
         private void StartButton_Click(object sender, RoutedEventArgs e)
         {
             NewGame();
+            intCounter++;
+            counterLabel.Content = intCounter;
+            roundsGrid.Opacity = 1;
             ResetGame();
             AssignAnswers();
             StackMenu1.Height = 0;
+            optionButton.IsEnabled = false;
             startButton.IsEnabled = false;
         }
+        /// <summary>
+        /// Button for testing if all images display correctly during runtime.
+        /// </summary>
         /*private void ImgTest_Click(object sender, RoutedEventArgs e)
         {
             DisplayAllImages();
@@ -257,7 +264,7 @@ namespace ItViteaVlaggen01.View
 
         private void Radiobutton_Checked(object sender, RoutedEventArgs e)
         {
-            if (fastMode)
+            if (quickMode)
                 Confirm();
             else if (startButton.IsEnabled == false)
                 confirmButton.IsEnabled = true;
@@ -296,15 +303,21 @@ namespace ItViteaVlaggen01.View
                 }
             }
         }
-        bool fastMode;
+        bool quickMode;
         private void ToggleButton_Checked(object sender, RoutedEventArgs e)
         {
-            fastMode = true;
+            quickMode = true;
+            foreach (Control control in grid1.Children)
+            {
+                if (control is RadioButton radio)
+                    radio.IsChecked = false;
+            }
+            confirmButton.IsEnabled = false;
         }
 
         private void ToggleButton_Unchecked(object sender, RoutedEventArgs e)
         {
-            fastMode = false;
+            quickMode = false;
         }
 
         //Switcher section.

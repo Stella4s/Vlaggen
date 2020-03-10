@@ -86,7 +86,7 @@
             <StackPanel>
 
                 <Button Content="&lt;- Back to Menu"  Margin="5,5" Padding="4"  Click="Button_Click"/>
-                <Grid>
+                <Grid Name="roundsGrid" Opacity="0">
                     <Grid.RowDefinitions>
                         <RowDefinition/>
                         <RowDefinition/>
@@ -105,16 +105,18 @@
 
             <StackPanel Grid.Row="1">
                 <Button x:Name="startButton"   Content="Start Game" Margin="5,5,5,2" Padding="4" Click="StartButton_Click"/>
-                <Button x:Name="optionButton"  Content="Options" Margin="5,5,5,2" Padding="4" Click="OptionButton_Click" ToolTip="Click to show options for changing the length of the game and turning quickmode on or off."/>
+                <Button x:Name="optionButton"  Content="Options" Margin="5,5,5,2" Padding="4" Click="OptionButton_Click" ToolTip="Click to show options for changing the length of the game."/>
                 <StackPanel x:Name="StackMenu1" Height="0" Margin="5,0" >
                     <RadioButton x:Name="R25"   Content="25 Rounds" Margin="0,2" IsChecked="True"  Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
                     <RadioButton x:Name="R50"   Content="50 Rounds" Margin="0,2"   Click="RoundsButton_Click"  Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
                     <RadioButton x:Name="R100"  Content="100 Rounds" Margin="0,2" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
                     <RadioButton x:Name="RAll"  Content="All Flags" Margin="0,2" ToolTip="194 Rounds" Click="RoundsButton_Click" Template="{StaticResource RadioMenuButton}" Style="{StaticResource RadioMenuStyle}"/>
-                    <ToggleButton Content="Quick Mode" Margin="0,2" Padding="4" ToolTip="Your answers are final. Recommended for game lengths of 50 rounds and above." Template="{StaticResource ToggleButtonMenuTemplate}" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
                 </StackPanel>
+                <ToggleButton Content="Quick Mode" Margin="5,2" Padding="4" ToolTip="Your answers are final. Recommended for game lengths of 50 rounds and above." Template="{StaticResource ToggleButtonMenuTemplate}" Checked="ToggleButton_Checked" Unchecked="ToggleButton_Unchecked"/>
 
-                <!--<Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>-->
+                <!--Button for testing if all images are displayed correctly during runtime. 
+                <Button x:Name="imgTestButton" Content="Test" Margin="5,5" Padding="4" Click="ImgTest_Click"/>
+                -->
 
 
             </StackPanel>
@@ -142,7 +144,6 @@
                     <RadioButton x:Name="rButton4" Content="" Checked="Radiobutton_Checked" Grid.Row="2" Grid.Column="1"/>
                 </Grid>
 
-                <!--<Label x:Name="labelShow" Content="" DockPanel.Dock="Bottom" HorizontalAlignment="Center"/>-->
                 <Image x:Name="image1" DockPanel.Dock="Top"/>
             </DockPanel>
 

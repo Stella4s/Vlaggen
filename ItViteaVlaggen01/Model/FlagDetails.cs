@@ -20,7 +20,6 @@ namespace ItViteaVlaggen01
         public string Name
         {
             get => _name;
-            //set => _name = BaseReplace(value).Replace("Flag", "").Replace("_", " ");
             set
             {
                 _name = BaseReplace(value).Replace("Flag", "").Replace("_", " ");
@@ -42,7 +41,6 @@ namespace ItViteaVlaggen01
         public string ImgSource
         {
             get => _imgSource;
-            //set => _imgSource = String.Format(@"Resources\{0}.png", BaseReplace(value));
             set
             {
                 _imgSource = String.Format(@"..\Resources\{0}.png", BaseReplace(value));
